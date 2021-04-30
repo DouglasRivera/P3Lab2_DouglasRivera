@@ -71,16 +71,22 @@ void EjerGrafico(){
     //llenado de ambos arreglos con rand
     for(int i = 0; i < 10; i++){
         array1[i] = 1 + (rand() % 20);
-        array2[i] = 1 + (rand() % 20);
+        array2[i] = 1 + (rand() % 20); 
+		cout << "[ " << array1[i] << " ]" ;
+		cout <<endl;
+		cout << "[ " << array2[i] << " ]" ;     
     }
+
     //declaracion de chars a imprimir;
     //ciclo que imprime ascii 177 0 178 segun num en arreglo
     for(int i = 0; i < 10; i++){
         for(int j = 0; j < array1[i]; j++){
+		
             cout << (char)177 << " ";
         }
         cout << endl;
         for(int k = 0; k < array2[i]; k++){
+		
             cout << (char)178 << " ";
         }
          cout << endl;
