@@ -5,9 +5,33 @@
 using namespace std;
 
 int menu();
+void EjerTrianguloPascal();
 void EjerDesviacion();
 void EjerGrafico();
 
+void EjerTrianguloPascal(int fila[], int size, int total){
+    
+    for(int i=0; i<size-1;i++)
+        cout << fila[i] << ",";
+         cout << fila[size-1] << endl;
+    
+    int nuevaFila[size+1] = {};
+    
+    nuevaFila[0] = 1;
+    for(int i=1; i<size; i++){
+        nuevaFila[i] = fila[i-1] + fila[i];
+    }
+    nuevaFila[size] = 1;
+    
+    
+    if (size<total)
+        EjerTrianguloPascal(nuevaFila,size+1,total);   
+}
+void EjerRecursiva(int n, int max, int ResultadoAnterior[], int Salida[]){
+	if (n == max){
+	
+		}
+	}
 void EjerDesviacion(){
 		//Declaracion de Random
     srand(time(0));
@@ -71,12 +95,22 @@ int main() {
 int opcion = menu();
 switch (opcion){
 	case 1:{
-		cout << endl;
-	    cout << "Iteraciones(Triangulo pascual)" << endl;
-		
-		cout <<endl;
+		int limite = 0;
+		 cout << "Triangulo de Pascal." << endl
+		 
+                << "Ingrese el limite de las filas a imprimir: ";
+                cin >> limite;
+                //Validar
+                while(limite<=0){
+                    cout << "    Debe ingresar un numero mayor a 0. Ingrese x: ";
+                    cin >> limite;
+                }
+                cout << endl;
+                int fila[] = {1};
+                EjerTrianguloPascal(fila,1,limite);
+                
 		break;
-	}
+}
 	case 2:{
 	      cout << endl;
 	      cout << "Sumatoria(Desviacion Estandar)" << endl;
